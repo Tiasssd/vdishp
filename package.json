@@ -1,0 +1,17 @@
+{
+  "name": "vdishp-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "cd client && npm install && cd ../server && npm install",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "multer": "^1.4.5-lts.2"
+  }
+}
