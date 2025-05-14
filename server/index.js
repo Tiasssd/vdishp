@@ -967,6 +967,39 @@ app.get('/api/orders', (req, res) => {
   });
 });
 
+// Поиск заказов по номеру телефона (публичный)
+app.get('/api/orders/by-phone/:phone', (req, res) => {
+  const phone = req.params.phone;
+  db.all('SELECT * FROM Orders WHERE phone = ?', [phone], (err, orders) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: 'Ошибка при поиске заказов', error: err.message });
+    }
+    if (orders.length === 0) {
+      return res.json({ success: true, orders: [] });
+    }
+    // Для каждого заказа получаем его элементы
+    let processed = 0;
+    orders.forEach((order, index) => {
+      db.all(
+        `SELECT oi.*, d.name, d.composition FROM OrderItems oi 
+         JOIN Dishes d ON oi.dish_id = d.id 
+         WHERE oi.order_id = ?`,
+        [order.id],
+        (err, items) => {
+          processed++;
+          if (err) {
+            return res.status(500).json({ success: false, message: 'Ошибка при получении элементов заказа', error: err.message });
+          }
+          orders[index].items = items;
+          if (processed === orders.length) {
+            res.json({ success: true, orders });
+          }
+        }
+      );
+    });
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Сервер запущен на http://localhost:${PORT}`);
 }); 

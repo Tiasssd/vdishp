@@ -194,6 +194,20 @@ function TrackOrderPage() {
     }
   };
 
+  // Функция форматирования номера телефона (как при регистрации/входе)
+  function formatPhone(value) {
+    if (!value.startsWith('+375-')) return '+375-';
+    let digits = value.replace(/\D/g, '');
+    // Оставляем только 9 цифр после кода страны
+    digits = digits.slice(3, 12);
+    let formatted = '+375-';
+    if (digits.length > 0) formatted += digits.slice(0, 2);
+    if (digits.length > 2) formatted += '-' + digits.slice(2, 5);
+    if (digits.length > 5) formatted += '-' + digits.slice(5, 7);
+    if (digits.length > 7) formatted += '-' + digits.slice(7, 9);
+    return formatted;
+  }
+
   return (
     <div className="track-page-block">
       <div className="track-title">Отслеживание заказа</div>
@@ -257,14 +271,15 @@ function TrackOrderPage() {
                   type="text" 
                   id="phoneNumber" 
                   value={phoneNumber} 
-                  onChange={(e) => setPhoneNumber(e.target.value)} 
-                  placeholder="Введите номер телефона" 
+                  onChange={e => setPhoneNumber(formatPhone(e.target.value))} 
+                  placeholder="+375-XX-XXX-XX-XX" 
+                  maxLength={17}
                   disabled={loading}
                 />
                 <button 
                   type="submit" 
                   className="track-submit-btn" 
-                  disabled={loading || !phoneNumber.trim()}
+                  disabled={loading || !phoneNumber.trim() || phoneNumber.length < 17}
                 >
                   Найти заказы
                 </button>
