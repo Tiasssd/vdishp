@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://vdishp.onrender.com/api';
 
 // Для сохранения найденных рабочих эндпоинтов
 let workingTrackEndpoint = null;
