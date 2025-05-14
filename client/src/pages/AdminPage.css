@@ -1,0 +1,1427 @@
+.admin-page-block {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.admin-page-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-title {
+  font-size: 2rem;
+  color: #4d2c5e;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-header {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+}
+
+.orders-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.admin-header h2 {
+  font-size: 1.5rem;
+  color: #4d2c5e;
+  margin: 0;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.add-dish-btn {
+  background: #4d2c5e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-left: 20px;
+}
+
+.add-dish-btn:hover {
+  background: #5d3c6e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-table-container {
+  overflow-x: auto;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table th {
+  background-color: #f8f8f8;
+  color: #4d2c5e;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  color: #4d2c5e;
+}
+
+.delete-btn {
+  color: #e74c3c;
+}
+
+.edit-btn:hover {
+  background-color: rgba(77, 44, 94, 0.1);
+}
+
+.delete-btn:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px !important;
+  color: #777;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.no-data-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.error-message {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.2);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+  padding: 14px 50px 14px 16px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.error-message span {
+  flex-grow: 1;
+}
+
+.close-error-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-error-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.success-message {
+  color: #27ae60;
+  background: rgba(39, 174, 96, 0.1);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  width: 40%;
+  box-shadow: 0 2px 6px rgba(39, 174, 96, 0.2);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+  padding: 24px 50px 0px 16px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.success-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.success-message span {
+  flex-grow: 1;
+}
+
+.close-success-btn {
+  background: none;
+  border: none;
+  color: #27ae60;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-success-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.loading-message {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.error-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .admin-page-block {
+    padding: 10px;
+  }
+  
+  .admin-page-content {
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .brand-block {
+    padding: 15px 10px;
+  }
+  
+  .brand-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #4d2c5e;
+    font-weight: 600;
+  }
+  
+  .admin-tabs {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .admin-tab {
+    padding: 12px 15px;
+    font-size: 15px;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    background-color: #f8f8f8;
+    color: #666;
+  }
+  
+  .admin-tab.active {
+    background-color: #4d2c5e;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .admin-tab.active::after {
+    display: none;
+  }
+  
+  .tab-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  .orders-header {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: none;
+  }
+  
+  .admin-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #4d2c5e;
+    font-weight: 600;
+  }
+  
+  .orders-controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .refresh-orders-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d2c5e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 180px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+  }
+  
+  .refresh-orders-btn:hover,
+  .refresh-orders-btn:active {
+    background-color: #5d3c6e;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  }
+  
+  .refresh-icon {
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+  
+  .refresh-text {
+    font-weight: 500;
+  }
+  
+  .success-message,
+  .error-message {
+    font-size: 0.9rem;
+    padding: 10px 35px 10px 12px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .loading-message {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-page-block {
+    padding: 8px;
+  }
+  
+  .admin-page-content {
+    padding: 12px;
+  }
+  
+  .brand-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .admin-tabs {
+    margin-bottom: 15px;
+  }
+  
+  .admin-tab {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .tab-icon {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+  
+  .admin-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .orders-controls {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .refresh-orders-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    max-width: 160px;
+  }
+  
+  .refresh-icon {
+    font-size: 0.9rem;
+    margin-right: 6px;
+  }
+  
+  .mobile-orders-filter {
+    margin: 0 0 15px 0;
+  }
+  
+  .filter-input-container {
+    margin-bottom: 5px;
+  }
+  
+  .order-filter-input {
+    padding: 10px 35px 10px 35px;
+    font-size: 14px;
+  }
+  
+  .mobile-order-card {
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .mobile-order-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mobile-expand-btn,
+  .mobile-status-select {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .mobile-status-selector {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tabs */
+.admin-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-tab {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: #777;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.admin-tab.active {
+  color: #6a1b9a;
+  font-weight: 600;
+}
+
+.admin-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #6a1b9a;
+  border-radius: 2px 2px 0 0;
+}
+
+.tab-icon {
+  margin-right: 8px;
+}
+
+/* Order management */
+.refresh-orders-btn {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.refresh-orders-btn:hover {
+  background-color: #e9e9e9;
+}
+
+.refresh-icon {
+  margin-right: 6px;
+}
+
+.refresh-text {
+  display: inline-block;
+}
+
+/* Order status styling */
+.order-status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.status-Новый {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-Принят {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-Готовится {
+  background-color: #fff8e1;
+  color: #f57f17;
+}
+
+.status-В\ пути {
+  background-color: #ede7f6;
+  color: #512da8;
+}
+
+.status-Доставлен {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.status-Отменен {
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+/* Status select styling */
+.status-select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.status-select:focus {
+  border-color: #6a1b9a;
+  outline: none;
+}
+
+/* Order row highlight based on status */
+.order-row {
+  transition: background-color 0.3s;
+}
+
+.order-row.status-Новый {
+  background-color: rgba(227, 242, 253, 0.2);
+}
+
+.order-row.status-Отменен {
+  background-color: rgba(255, 235, 238, 0.2);
+}
+
+/* Action buttons for admin */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  color: #2196f3;
+}
+
+.edit-btn:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.delete-btn {
+  color: #f44336;
+}
+
+.delete-btn:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-tabs {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .admin-tab {
+    padding: 12px 15px;
+    font-size: 15px;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    background-color: #f8f8f8;
+    color: #666;
+  }
+  
+  .admin-tab.active {
+    background-color: #4d2c5e;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .admin-tab.active::after {
+    display: none;
+  }
+  
+  .tab-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+  
+  .order-status {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .status-select {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-page-block {
+    padding: 8px;
+  }
+  
+  .admin-page-content {
+    padding: 12px;
+  }
+  
+  .brand-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .admin-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .orders-controls {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .refresh-orders-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .refresh-icon {
+    font-size: 0.9rem;
+  }
+  
+  /* Mobile dish cards */
+  .mobile-dishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .mobile-dish-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid #6a1b9a;
+  }
+  
+  .mobile-dish-info {
+    flex: 1;
+  }
+  
+  .mobile-dish-name {
+    font-size: 1rem;
+    color: #4d2c5e;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+  }
+  
+  .mobile-dish-category {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .mobile-dish-price {
+    font-weight: 600;
+    color: #e16b5c;
+  }
+  
+  .mobile-dish-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .no-data-mobile {
+    text-align: center;
+    padding: 30px 20px;
+    color: #777;
+    font-size: 0.95rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Mobile order filters */
+  .mobile-orders-filter {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .filter-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-icon {
+    position: absolute;
+    left: 10px;
+    color: #6a1b9a;
+    font-size: 1rem;
+  }
+  
+  .order-filter-input {
+    width: 100%;
+    padding: 10px 35px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .order-filter-input:focus {
+    border-color: #6a1b9a;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(106, 27, 154, 0.1);
+  }
+  
+  .clear-filter-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #999;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .orders-count {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: right;
+  }
+  
+  /* Mobile order cards */
+  .mobile-orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .mobile-order-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    transition: box-shadow 0.3s;
+    border-left: 3px solid #6a1b9a;
+    position: relative;
+  }
+  
+  .mobile-order-card.status-Новый {
+    border-left-color: #1565c0;
+  }
+  
+  .mobile-order-card.status-Принят {
+    border-left-color: #2e7d32;
+  }
+  
+  .mobile-order-card.status-Готовится {
+    border-left-color: #f57f17;
+  }
+  
+  .mobile-order-card.status-В\ пути {
+    border-left-color: #512da8;
+  }
+  
+  .mobile-order-card.status-Доставлен {
+    border-left-color: #1b5e20;
+  }
+  
+  .mobile-order-card.status-Отменен {
+    border-left-color: #b71c1c;
+  }
+  
+  .mobile-order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .mobile-order-id {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #4d2c5e;
+  }
+  
+  .mobile-order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .mobile-order-date,
+  .mobile-order-phone,
+  .mobile-order-total,
+  .mobile-order-address,
+  .mobile-order-notes {
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  .mobile-order-details {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+  
+  .mobile-order-items {
+    margin-top: 15px;
+  }
+  
+  .mobile-order-items h4 {
+    font-size: 0.95rem;
+    color: #4d2c5e;
+    margin: 0 0 10px 0;
+  }
+  
+  .mobile-order-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .mobile-order-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  .mobile-order-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .mobile-item-name {
+    flex: 1 1 100%;
+    font-weight: 500;
+  }
+  
+  .mobile-item-qty {
+    background-color: rgba(77, 44, 94, 0.1);
+    color: #4d2c5e;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .mobile-item-price {
+    font-weight: 600;
+    color: #e16b5c;
+    font-size: 0.9rem;
+  }
+  
+  .mobile-status-control {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .mobile-status-control label {
+    font-size: 0.9rem;
+    color: #4d2c5e;
+  }
+  
+  .mobile-order-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+  }
+  
+  .mobile-action-btn {
+    background: #f0f0f0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .mobile-expand-indicator {
+    font-size: 0.85rem;
+    color: #6a1b9a;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .action-menu-container {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .action-menu {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    min-width: 150px;
+  }
+  
+  .status-select-menu {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 480px) {
+    .admin-page-block {
+      padding: 5px;
+    }
+    
+    .admin-page-content {
+      padding: 12px;
+      border-radius: 6px;
+    }
+    
+    .admin-header h2 {
+      font-size: 1.1rem;
+    }
+    
+    .mobile-dish-card,
+    .mobile-order-card {
+      padding: 12px;
+      border-radius: 6px;
+    }
+    
+    .mobile-dish-name {
+      font-size: 0.95rem;
+    }
+    
+    .mobile-dish-category,
+    .mobile-dish-price {
+      font-size: 0.85rem;
+    }
+    
+    .mobile-order-details {
+      padding: 10px;
+      font-size: 0.85rem;
+    }
+    
+    .mobile-order-items h4 {
+      font-size: 0.9rem;
+    }
+    
+    .mobile-item-name {
+      font-size: 0.85rem;
+    }
+    
+    .order-filter-input {
+      padding: 8px 35px 8px 35px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* Исправляем отступ для мобильной версии, чтобы контент не перекрывался нижней панелью */
+body.mobile-layout .admin-page-block {
+  padding-bottom: 80px !important;
+}
+
+/* Исправление для card, чтобы они полностью видны были над нижним сайдбаром */
+body.mobile-layout .mobile-order-card {
+  margin-bottom: 15px;
+}
+
+body.mobile-layout .mobile-order-card:last-child {
+  margin-bottom: 60px;
+}
+
+/* Обеспечиваем, чтобы длинный контент заказа был полностью видимым */
+body.mobile-layout .mobile-orders-list {
+  padding-bottom: 80px;
+}
+
+/* Фиксируем отображение на мобильных экранах */
+@media (max-width: 480px) {
+  body.mobile-layout .admin-page-block {
+    padding-bottom: 75px !important;
+  }
+  
+  body.mobile-layout .mobile-order-card:last-child {
+    margin-bottom: 50px;
+  }
+}
+
+/* Мобильная версия карточек заказов */
+.mobile-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+  padding-bottom: 80px;
+}
+
+.mobile-order-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #ddd;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.mobile-order-card.status-Новый {
+  border-left-color: #1565c0;
+}
+
+.mobile-order-card.status-Принят {
+  border-left-color: #2e7d32;
+}
+
+.mobile-order-card.status-Готовится {
+  border-left-color: #f57f17;
+}
+
+.mobile-order-card.status-В\ пути {
+  border-left-color: #512da8;
+}
+
+.mobile-order-card.status-Доставлен {
+  border-left-color: #1b5e20;
+}
+
+.mobile-order-card.status-Отменен {
+  border-left-color: #b71c1c;
+  opacity: 0.8;
+}
+
+.mobile-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-order-id {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #4d2c5e;
+}
+
+.mobile-order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.mobile-order-date,
+.mobile-order-phone,
+.mobile-order-total,
+.mobile-order-address,
+.mobile-order-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.mobile-order-details {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 0.95rem;
+  border: 1px solid #eee;
+}
+
+.mobile-order-items {
+  margin-top: 12px;
+}
+
+.mobile-order-items h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #4d2c5e;
+}
+
+.mobile-order-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-order-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.mobile-item-qty {
+  background-color: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin: 0 10px;
+}
+
+.mobile-item-price {
+  font-weight: 600;
+  color: #4d2c5e;
+  text-align: right;
+}
+
+.mobile-order-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  gap: 12px;
+}
+
+.mobile-expand-btn {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #4d2c5e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-expand-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.mobile-status-selector {
+  flex: 2;
+}
+
+.mobile-status-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 0.9rem;
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234d2c5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-status-select:focus {
+  outline: none;
+  border-color: #4d2c5e;
+  box-shadow: 0 0 0 2px rgba(77, 44, 94, 0.2);
+}
+
+@media (max-width: 480px) {
+  .mobile-order-card {
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .mobile-order-header {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+  
+  .mobile-order-id {
+    font-size: 1rem;
+  }
+  
+  .mobile-order-info {
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+  
+  .mobile-order-details {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .mobile-order-items h4 {
+    font-size: 0.95rem;
+  }
+  
+  .mobile-item-name {
+    font-size: 0.9rem;
+  }
+  
+  .mobile-item-qty {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    margin: 0 5px;
+  }
+  
+  .mobile-item-price {
+    font-size: 0.9rem;
+  }
+  
+  .mobile-order-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mobile-expand-btn,
+  .mobile-status-select {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .mobile-status-selector {
+    width: 100%;
+  }
+  
+  .admin-header.orders-header {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .orders-controls {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .refresh-orders-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .refresh-icon {
+    font-size: 14px;
+  }
+  
+  .admin-tabs {
+    margin-bottom: 15px;
+  }
+  
+  .admin-tab {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .tab-icon {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+  
+  .mobile-orders-filter {
+    margin: 0 0 15px 0;
+  }
+  
+  .filter-input-container {
+    margin-bottom: 5px;
+  }
+  
+  .order-filter-input {
+    padding: 10px 35px 10px 35px;
+    font-size: 14px;
+  }
+} 
